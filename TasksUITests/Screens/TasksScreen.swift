@@ -14,6 +14,7 @@ enum LogoutOption {
 }
 
 class TasksScreen: BaseScreen {
+    
     let tasksPage = app.staticTexts["Tasks"]
     let tasks = app.tables.cells
     let selectedTaskIndex: Int = 0
@@ -29,17 +30,19 @@ class TasksScreen: BaseScreen {
     
     let completeAllButton = app.buttons["Complete All"]
     let cancelAllButton = app.buttons["Cancel All"]
-    
+    let sortByNameButton = app.buttons["Sort by Name"]
     
     enum ManageTasks {
         case complete
         case uncheck
+        case sort
     }
     
     public func manageAllTasks(option:  ManageTasks) {
         switch option {
         case .complete: completeAllButton.tap()
         case .uncheck: cancelAllButton.tap()
+        case .sort: sortByNameButton.tap()
         }
     }
     
@@ -70,6 +73,12 @@ class TasksScreen: BaseScreen {
             let task = tasks.element(boundBy: index)
             let taskStatus = task.images["cell_image_view"].value
             XCTAssertEqual(taskStatus as! String, status)
+        }
+    }
+    
+    public func checkTasksAreSortedByName() {
+        for index in 0...tasks.count-2 {
+            XCTAssertGreaterThan(tasks.element(boundBy: index+1).staticTexts.firstMatch.label, tasks.element(boundBy: index).staticTexts.firstMatch.label, "Invalid order of tasks")
         }
     }
     
