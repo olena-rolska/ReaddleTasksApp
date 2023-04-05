@@ -23,23 +23,12 @@ class CompleteTask: BaseTest {
 
         let tasksScreen = TasksScreen()
         XCTAssert(tasksScreen.tasksPage.waitForExistence(timeout: 5), "User is not logged in")
-
         
-        let tasks = XCUIApplication().tables.cells
-        let selectedTaskIndex: Int = 0
-        let selectedTask = tasks.element(boundBy: selectedTaskIndex)
-        selectedTask.tap()
+        tasksScreen.selectedTask.tap()
         
-        let selectedTaskStatus = selectedTask.images["cell_image_view"].value
+        tasksScreen.checkSelectedTaskStatus()
         
-        XCTAssertEqual(selectedTaskStatus as! String, "Selected")
+        tasksScreen.checkNonSelectedTasksStatuses()
         
-        for index in 0...tasks.count-1 {
-            if index != selectedTaskIndex {
-                let anotherTask = tasks.element(boundBy: index)
-                let anotherTaskStatus = anotherTask.images["cell_image_view"].value
-                XCTAssertEqual(anotherTaskStatus as! String, "Not selected")
-            }
-        }
     }
 }
