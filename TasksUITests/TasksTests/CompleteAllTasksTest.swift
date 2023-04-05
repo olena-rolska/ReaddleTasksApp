@@ -1,14 +1,14 @@
 //
-//  CompleteTaskTest.swift
+//  CompleteAllTasksTest.swift
 //  TasksUITests
 //
-//  Created by Test on 04.04.2023.
+//  Created by Test on 05.04.2023.
 //  Copyright © 2023 Cultured Code. All rights reserved.
 //
 
 import XCTest
 
-class CompleteTask: BaseTest {
+class CompleteAllTasksTest: BaseTest {
     let email = "dummy@gmail.com"
     let password = "1"
     
@@ -16,22 +16,21 @@ class CompleteTask: BaseTest {
     let taskUnchecked = "Not selected"
     
     override func tearDown() {
-        deleteApp()
+         deleteApp()
         super.tearDown()
     }
     
-    func testCompleteTask() throws {
+    func testCompleteAllTasks() throws {
         let loginScreen = LoginScreen()
         loginScreen.login(email: email, pass: password)
 
         let tasksScreen = TasksScreen()
         XCTAssert(tasksScreen.tasksPage.waitForExistence(timeout: 5), "User is not logged in")
+
+        tasksScreen.checkAllTasksStatuses(status: taskUnchecked)
         
-        tasksScreen.selectedTask.tap()
+        tasksScreen.completeAllButton.tap()
         
-        tasksScreen.checkTaskStatus(status: taskCompleted)
-        
-        tasksScreen.checkOtherTasksStatuses(status: taskUnchecked)
-        
+        tasksScreen.checkAllTasksStatuses(status: taskCompleted)
     }
 }

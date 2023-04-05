@@ -27,6 +27,7 @@ class TasksScreen: BaseScreen {
     let taskCompleted = "Selected"
     let taskUnchecked = "Not selected"
     
+    let completeAllButton = app.buttons["Complete All"]
     
     public func chooseLogout(option: LogoutOption) {
         switch option {
@@ -46,6 +47,15 @@ class TasksScreen: BaseScreen {
                 let anotherTaskStatus = anotherTask.images["cell_image_view"].value
                 XCTAssertEqual(anotherTaskStatus as! String, status)
             }
+        }
+    }
+    
+    public func checkAllTasksStatuses(status: String) {
+        for index in 0...tasks.count-1 {
+           
+            let task = tasks.element(boundBy: index)
+            let taskStatus = task.images["cell_image_view"].value
+            XCTAssertEqual(taskStatus as! String, status)
         }
     }
     
