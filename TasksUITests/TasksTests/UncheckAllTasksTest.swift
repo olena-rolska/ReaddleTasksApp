@@ -1,5 +1,5 @@
 //
-//  CompleteAllTasksTest.swift
+//  UncheckAllTasksTest.swift
 //  TasksUITests
 //
 //  Created by Test on 05.04.2023.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class CompleteAllTasksTest: BaseTest {
+class UncheckAllTasksTest: BaseTest {
     let email = "dummy@gmail.com"
     let password = "1"
     
@@ -16,11 +16,11 @@ class CompleteAllTasksTest: BaseTest {
     let taskUnchecked = "Not selected"
     
     override func tearDown() {
-         deleteApp()
+        deleteApp()
         super.tearDown()
     }
     
-    func testCompleteAllTasks() throws {
+    func testUncheckAllTasks() throws {
         let loginScreen = LoginScreen()
         loginScreen.login(email: email, pass: password)
 
@@ -32,5 +32,10 @@ class CompleteAllTasksTest: BaseTest {
         tasksScreen.manageAllTasks(option: .complete)
         
         tasksScreen.checkAllTasksStatuses(status: taskCompleted)
+        
+        tasksScreen.manageAllTasks(option: .uncheck)
+        
+        tasksScreen.checkAllTasksStatuses(status: taskUnchecked)
     }
 }
+

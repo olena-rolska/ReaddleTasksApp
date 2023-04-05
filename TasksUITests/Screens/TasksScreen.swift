@@ -28,6 +28,20 @@ class TasksScreen: BaseScreen {
     let taskUnchecked = "Not selected"
     
     let completeAllButton = app.buttons["Complete All"]
+    let cancelAllButton = app.buttons["Cancel All"]
+    
+    
+    enum ManageTasks {
+        case complete
+        case uncheck
+    }
+    
+    public func manageAllTasks(option:  ManageTasks) {
+        switch option {
+        case .complete: completeAllButton.tap()
+        case .uncheck: cancelAllButton.tap()
+        }
+    }
     
     public func chooseLogout(option: LogoutOption) {
         switch option {
