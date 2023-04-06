@@ -10,5 +10,7 @@ import XCTest
 
 class SubTasksScreen: BaseScreen {
     
-    let subtasks = app.staticTexts["Sleep"]
+    let moreInfoButton = app.buttons["More Info"]
+    
+    let subtasksPageTitle = app.staticTexts["Sleep"]
 }
