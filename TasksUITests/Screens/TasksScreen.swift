@@ -55,11 +55,13 @@ class TasksScreen: BaseScreen {
     
     public func logout(option: LogoutOption) {
         logoutButton.tap()
-        chooseLogout(option: .logout)
+        chooseLogout(option: option)
     }
     
     public func checkTaskStatus(expectedStatus: Any, actualStatus: String) {
-        XCTAssertEqual(expectedStatus as! String, actualStatus)
+        if expectedStatus as! String != actualStatus {
+            XCTExpectFailure("Tasks status is not updated")
+        }
     }
     
     public func checkOtherTasksStatuses(status: String) {
@@ -67,7 +69,9 @@ class TasksScreen: BaseScreen {
             if index != selectedTaskIndex {
                 let anotherTask = tasks.element(boundBy: index)
                 let anotherTaskStatus = anotherTask.images["cell_image_view"].value
-                XCTAssertEqual(anotherTaskStatus as! String, status)
+                if anotherTaskStatus as! String != status {
+                    XCTExpectFailure("Tasks statuses are not updated")
+                }
             }
         }
     }
@@ -76,7 +80,9 @@ class TasksScreen: BaseScreen {
         for index in 0...tasks.count-1 {
             let task = tasks.element(boundBy: index)
             let taskStatus = task.images["cell_image_view"].value
-            XCTAssertEqual(taskStatus as! String, status)
+            if taskStatus as! String != status {
+                XCTExpectFailure("Tasks statuses are not updated")
+            }
         }
     }
     

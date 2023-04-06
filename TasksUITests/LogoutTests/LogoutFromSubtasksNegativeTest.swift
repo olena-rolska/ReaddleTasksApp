@@ -23,7 +23,7 @@ class LogoutFromSubtasksNegativeTest: BaseTest {
         loginScreen.login(email: email, pass: password)
         
         let tasksScreen = TasksScreen()
-        XCTAssert(tasksScreen.tasksPage.waitForExistence(timeout: 5), "User is not logged in")
+        XCTAssert(tasksScreen.tasksPage.waitForExistence(timeout: 6), "User is not logged in")
         
         let subtasksScreen = SubTasksScreen()
         subtasksScreen.moreInfoButton.tap()

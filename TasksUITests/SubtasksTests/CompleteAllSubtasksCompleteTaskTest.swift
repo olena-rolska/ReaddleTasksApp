@@ -36,9 +36,9 @@ class CompleteAllSubtasksCompleteTaskTest: BaseTest {
         XCTAssert(tasksScreen.tasksPage.waitForExistence(timeout: 5), "User is on the wrong screen")
         let selectedTaskIndex: Int = 3
         let selectedTask = app.tables.cells.element(boundBy: selectedTaskIndex)
-        let selectedTaskStatus = selectedTask.images["cell_image_view"].value
+        let sleepTaskStatus = selectedTask.images["cell_image_view"].value
         
-        tasksScreen.checkTaskStatus(expectedStatus: selectedTaskStatus, actualStatus: "Selected")
+        tasksScreen.checkTaskStatus(expectedStatus: sleepTaskStatus, actualStatus: "Selected")
         
     }
 }
