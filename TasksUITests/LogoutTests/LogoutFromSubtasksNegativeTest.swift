@@ -29,9 +29,7 @@ class LogoutFromSubtasksNegativeTest: BaseTest {
         subtasksScreen.moreInfoButton.tap()
         XCTAssert(subtasksScreen.subtasksPageTitle.waitForExistence(timeout: 2), "User is not on the subtasks screen")
         
-        tasksScreen.logoutButton.tap()
-        tasksScreen.chooseLogout(option: .cancel)
-        
+        tasksScreen.logout(option: .cancel)
         XCTAssert(subtasksScreen.subtasksPageTitle.waitForExistence(timeout: 2), "User is logged out or in the wrong page")
     }
 }

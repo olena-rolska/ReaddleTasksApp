@@ -1,5 +1,5 @@
 //
-//  UncheckAllSubtasksTest.swift
+//  UncheckTaskUncheckAllSubtasksTest.swift
 //  TasksUITests
 //
 //  Created by Test on 06.04.2023.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class UncheckAllSubtasksTest: BaseTest {
+class UncheckTaskUncheckAllSubtasksTest: BaseTest {
     let email = "dummy@gmail.com"
     let password = "1"
     
@@ -20,24 +20,35 @@ class UncheckAllSubtasksTest: BaseTest {
         super.tearDown()
     }
     
-    func testUncheckAllSubtasks() throws {
+    func testUncheckTaskUncheckAllSubtasks() throws {
         let loginScreen = LoginScreen()
         loginScreen.login(email: email, pass: password)
 
         let tasksScreen = TasksScreen()
         XCTAssert(tasksScreen.tasksPage.waitForExistence(timeout: 5), "User is not logged in")
-
+        
+        let sleepTaskIndex: Int = 3
+        let sleepTask = app.tables.cells.element(boundBy: sleepTaskIndex)
+        
+        sleepTask.tap()
+        tasksScreen.checkTaskStatus(expectedStatus: sleepTask.images["cell_image_view"].value, actualStatus: taskCompleted)
+        
         let subtasksScreen = SubTasksScreen()
         subtasksScreen.moreInfoButton.tap()
         XCTAssert(subtasksScreen.subtasksPageTitle.waitForExistence(timeout: 2), "User is not on the subtasks screen")
         
-        tasksScreen.manageAllTasks(option: .complete)
-        
         tasksScreen.checkAllTasksStatuses(status: taskCompleted)
         
-        tasksScreen.manageAllTasks(option: .uncheck)
+        subtasksScreen.backButton.tap()
+        XCTAssert(tasksScreen.tasksPage.waitForExistence(timeout: 5), "User is on the wrong screen")
+        sleepTask.tap()
+        tasksScreen.checkTaskStatus(expectedStatus: sleepTask.images["cell_image_view"].value, actualStatus: taskUnchecked)
+        
+        subtasksScreen.moreInfoButton.tap()
+        XCTAssert(subtasksScreen.subtasksPageTitle.waitForExistence(timeout: 2), "User is not on the subtasks screen")
         
         tasksScreen.checkAllTasksStatuses(status: taskUnchecked)
+        
     }
 }
 
