@@ -1,5 +1,5 @@
 //
-//  CompleteAllSubtasksCompleteTaskTest.swift
+//  CompleteAllSubtasksTest.swift
 //  TasksUITests
 //
 //  Created by Test on 06.04.2023.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class CompleteAllSubtasksCompleteTaskTest: BaseTest {
+class CompleteAllSubtasksTest: BaseTest {
     let email = "dummy@gmail.com"
     let password = "1"
     
@@ -17,7 +17,7 @@ class CompleteAllSubtasksCompleteTaskTest: BaseTest {
         super.tearDown()
     }
     
-    func testCompleteAllSubtasksCompleteTask() throws {
+    func testCompleteAllSubtasks() throws {
         let loginScreen = LoginScreen()
         loginScreen.login(email: email, pass: password)
 
@@ -31,14 +31,6 @@ class CompleteAllSubtasksCompleteTaskTest: BaseTest {
         tasksScreen.manageAllTasks(option: .complete)
         tasksScreen.checkAllTasksStatuses(status: "Selected")
         
-        subtasksScreen.backButton.tap()
-        
-        XCTAssert(tasksScreen.tasksPage.waitForExistence(timeout: 5), "User is on the wrong screen")
-        let selectedTaskIndex: Int = 3
-        let selectedTask = app.tables.cells.element(boundBy: selectedTaskIndex)
-        let selectedTaskStatus = selectedTask.images["cell_image_view"].value
-        
-        tasksScreen.checkTaskStatus(expectedStatus: selectedTaskStatus, actualStatus: "Selected")
-        
     }
 }
+

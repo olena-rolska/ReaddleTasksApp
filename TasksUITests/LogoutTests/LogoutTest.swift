@@ -26,8 +26,7 @@ class LogoutTest: BaseTest {
         let tasksScreen = TasksScreen()
         XCTAssert(tasksScreen.tasksPage.waitForExistence(timeout: 5), "User is not logged in")
         
-        tasksScreen.logoutButton.tap()
-        tasksScreen.chooseLogout(option: .logout)
+        tasksScreen.logout(option: .logout)
         
         XCTAssert(loginScreen.loginButton.waitForExistence(timeout: 2), "User is not logged out")
     }

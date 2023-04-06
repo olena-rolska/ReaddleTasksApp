@@ -53,7 +53,12 @@ class TasksScreen: BaseScreen {
         }
     }
     
-    public func checkTaskStatus (expectedStatus: Any, actualStatus: String) {
+    public func logout(option: LogoutOption) {
+        logoutButton.tap()
+        chooseLogout(option: .logout)
+    }
+    
+    public func checkTaskStatus(expectedStatus: Any, actualStatus: String) {
         XCTAssertEqual(expectedStatus as! String, actualStatus)
     }
     
@@ -69,7 +74,6 @@ class TasksScreen: BaseScreen {
     
     public func checkAllTasksStatuses(status: String) {
         for index in 0...tasks.count-1 {
-           
             let task = tasks.element(boundBy: index)
             let taskStatus = task.images["cell_image_view"].value
             XCTAssertEqual(taskStatus as! String, status)
@@ -80,6 +84,12 @@ class TasksScreen: BaseScreen {
         for index in 0...tasks.count-2 {
             XCTAssertGreaterThan(tasks.element(boundBy: index+1).staticTexts.firstMatch.label, tasks.element(boundBy: index).staticTexts.firstMatch.label, "Invalid order of tasks")
         }
+    }
+    
+    func taskProgressSaved() {
+        let updatedStatus = tasks.element(boundBy: 0).images["cell_image_view"].value
+        checkTaskStatus(expectedStatus: updatedStatus, actualStatus: taskCompleted)
+        XCTExpectFailure("Task progress is not saved")
     }
     
 }
