@@ -12,5 +12,10 @@ class SubTasksScreen: BaseScreen {
     
     let moreInfoButton = app.buttons["More Info"]
     
+    // not great practice to check by title
     let subtasksPageTitle = app.staticTexts["Sleep"]
+    
+    let backButton = app.buttons["Tasks"]
+    
+    // write command with more checks of the screen - back button, etc
 }

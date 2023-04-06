@@ -53,8 +53,8 @@ class TasksScreen: BaseScreen {
         }
     }
     
-    public func checkTaskStatus (status: String) {
-        XCTAssertEqual(selectedTaskStatus as! String, status)
+    public func checkTaskStatus (expectedStatus: Any, actualStatus: String) {
+        XCTAssertEqual(expectedStatus as! String, actualStatus)
     }
     
     public func checkOtherTasksStatuses(status: String) {

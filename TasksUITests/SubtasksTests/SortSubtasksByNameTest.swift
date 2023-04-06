@@ -26,7 +26,6 @@ class SortSubtasksByNameTest: BaseTest {
         
         let subtasksScreen = SubTasksScreen()
         subtasksScreen.moreInfoButton.tap()
-        
         XCTAssert(subtasksScreen.subtasksPageTitle.waitForExistence(timeout: 2), "User is not on the subtasks screen")
         
         tasksScreen.manageAllTasks(option: .sort)

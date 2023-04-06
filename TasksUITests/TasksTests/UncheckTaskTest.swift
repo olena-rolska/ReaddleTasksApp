@@ -29,7 +29,7 @@ class UncheckTaskTest: BaseTest {
         
         tasksScreen.selectedTask.tap()
         
-        tasksScreen.checkTaskStatus(status: taskCompleted)
+        tasksScreen.checkTaskStatus(expectedStatus: tasksScreen.selectedTaskStatus, actualStatus: taskCompleted)
         
         tasksScreen.checkOtherTasksStatuses(status: taskUnchecked)
         
