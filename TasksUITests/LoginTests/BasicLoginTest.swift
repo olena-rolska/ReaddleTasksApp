@@ -9,19 +9,11 @@
 import XCTest
 
 class BasicLoginTest: BaseTest {
-    
-    let email = "dummy@gmail.com"
-    let password = "1"
-    
-    override func tearDown() {
-        deleteApp()
-        super.tearDown()
-    }
 
     func testBasicLogin() throws {
 
         let loginScreen = LoginScreen()
-        loginScreen.login(email: email, pass: password)
+        try loginScreen.login()
         
         let tasksScreen = TasksScreen()
         XCTAssert(tasksScreen.tasksPage.waitForExistence(timeout: 5), "User is not logged in")

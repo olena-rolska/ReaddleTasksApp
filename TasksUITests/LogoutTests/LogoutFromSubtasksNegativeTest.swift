@@ -8,19 +8,11 @@
 import XCTest
 
 class LogoutFromSubtasksNegativeTest: BaseTest {
-    
-    let email = "dummy@gmail.com"
-    let password = "1"
-    
-    override func tearDown() {
-        deleteApp()
-        super.tearDown()
-    }
 
     func testLogoutFromSubtasksNotFinished() throws {
 
         let loginScreen = LoginScreen()
-        loginScreen.login(email: email, pass: password)
+        try loginScreen.login()
         
         let tasksScreen = TasksScreen()
         XCTAssert(tasksScreen.tasksPage.waitForExistence(timeout: 6), "User is not logged in")

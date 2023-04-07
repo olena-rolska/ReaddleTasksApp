@@ -9,17 +9,10 @@
 import XCTest
 
 class CompleteAllSubtasksTest: BaseTest {
-    let email = "dummy@gmail.com"
-    let password = "1"
-    
-    override func tearDown() {
-        deleteApp()
-        super.tearDown()
-    }
     
     func testCompleteAllSubtasks() throws {
         let loginScreen = LoginScreen()
-        loginScreen.login(email: email, pass: password)
+        try loginScreen.login()
 
         let tasksScreen = TasksScreen()
         XCTAssert(tasksScreen.tasksPage.waitForExistence(timeout: 5), "User is not logged in")
@@ -29,7 +22,7 @@ class CompleteAllSubtasksTest: BaseTest {
         XCTAssert(subtasksScreen.subtasksPageTitle.waitForExistence(timeout: 2), "User is not on the subtasks screen")
         
         tasksScreen.manageAllTasks(option: .complete)
-        tasksScreen.checkAllTasksStatuses(status: "Selected")
+        try tasksScreen.checkAllTasksStatuses(status: tasksScreen.taskCompleted)
         
     }
 }

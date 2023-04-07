@@ -15,13 +15,15 @@ class LoginWithInvalidEmailTest: BaseTest {
     
     func testLoginWithInvalidEmail() throws {
         let loginScreen = LoginScreen()
-        let baseScreen = BaseScreen()
         
-        loginScreen.login(email: email, pass: password)
-        
+        try loginScreen.login(email: email, password: password)
         
         let errorMessage: XCUIElement = app.alerts.staticTexts["Error"]
         
         XCTAssert(errorMessage.waitForExistence(timeout: 2), "No alert met")
+    }
+    
+    override func tearDown() {
+        
     }
 }

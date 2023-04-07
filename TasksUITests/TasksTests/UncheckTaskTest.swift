@@ -9,32 +9,22 @@
 import XCTest
 
 class UncheckTaskTest: BaseTest {
-    let email = "dummy@gmail.com"
-    let password = "1"
-    
-    let taskCompleted = "Selected"
-    let taskUnchecked = "Not selected"
-    
-    override func tearDown() {
-        deleteApp()
-        super.tearDown()
-    }
     
     func testUncheckTask() throws {
         let loginScreen = LoginScreen()
-        loginScreen.login(email: email, pass: password)
+        try loginScreen.login()
         
         let tasksScreen = TasksScreen()
         XCTAssert(tasksScreen.tasksPage.waitForExistence(timeout: 5), "User is not logged in")
         
         tasksScreen.selectedTask.tap()
         
-        tasksScreen.checkTaskStatus(expectedStatus: tasksScreen.selectedTaskStatus, actualStatus: taskCompleted)
+        try tasksScreen.checkTaskStatus(expectedStatus: tasksScreen.selectedTaskStatus as! String, actualStatus: tasksScreen.taskCompleted)
         
-        tasksScreen.checkOtherTasksStatuses(status: taskUnchecked)
+        tasksScreen.checkOtherTasksStatuses(status: tasksScreen.taskUnchecked)
         
         tasksScreen.selectedTask.tap()
    
-       tasksScreen.checkOtherTasksStatuses(status: taskUnchecked)
+        tasksScreen.checkOtherTasksStatuses(status: tasksScreen.taskUnchecked)
     }
 }

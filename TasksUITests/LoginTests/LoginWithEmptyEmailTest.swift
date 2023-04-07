@@ -21,4 +21,8 @@ class  LoginWithEmptyEmailTest: BaseTest {
         
         XCTAssertEqual(loginScreen.loginButton.isEnabled, false)
     }
+    
+    override func tearDown() {
+        
+    }
 }

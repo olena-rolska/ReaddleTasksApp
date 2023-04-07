@@ -18,25 +18,23 @@ class LoginScreen: BaseScreen {
     let errorAlert = app.alerts.buttons["Retry"]
     let loginProgressLoader = app.staticTexts["Logging in"]
     
-    public func login(email: String, pass: String) {
+    public func login(email: String = "dummy@gmail.com", password: String = "1") throws {
         
         emailField.tap()
         emailField.typeText(email)
         
         passwordField.tap()
-        passwordField.typeText(pass)
+        passwordField.typeText(password)
         
         loginButton.tap()
         
         loginProgressLoader.waitForExistence(timeout: 2)
         
-        if errorAlert.exists == true {
+        if errorAlert.exists {
             errorAlert.tap()
         }
         
-        if errorAlert.exists == true {
-            errorAlert.tap()
-        }
-        
+        loginProgressLoader.waitForExistence(timeout: 1)
+        XCTAssertTrue(!errorAlert.exists, "Extra login alert")
     }
 }

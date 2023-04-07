@@ -58,10 +58,15 @@ class TasksScreen: BaseScreen {
         chooseLogout(option: option)
     }
     
-    public func checkTaskStatus(expectedStatus: Any, actualStatus: String) {
-        if expectedStatus as! String != actualStatus {
-            XCTExpectFailure("Tasks status is not updated")
+    public func checkTaskStatus(expectedStatus: String, actualStatus: String) throws {
+        let options = XCTExpectedFailure.Options()
+        
+        if expectedStatus == actualStatus {
+            options.isEnabled = false
         }
+        
+        XCTExpectFailure("Expected failure", options: options)
+        XCTAssertEqual(expectedStatus, actualStatus)
     }
     
     public func checkOtherTasksStatuses(status: String) {
@@ -76,26 +81,50 @@ class TasksScreen: BaseScreen {
         }
     }
     
-    public func checkAllTasksStatuses(status: String) {
+    public func checkAllTasksStatuses(status: String) throws {
+        let options = XCTExpectedFailure.Options()
+        options.issueMatcher = { issue in
+            issue.type == .assertionFailure && issue.compactDescription.contains("Wrong task status")
+        }
+        
         for index in 0...tasks.count-1 {
             let task = tasks.element(boundBy: index)
             let taskStatus = task.images["cell_image_view"].value
-            if taskStatus as! String != status {
-                XCTExpectFailure("Tasks statuses are not updated")
+            
+            if taskStatus as! String == status {
+                options.isEnabled = false
             }
+            
+            XCTExpectFailure("Expected exception", options: options)
+            XCTAssertEqual(taskStatus as! String, status, "Wrong task status")
         }
     }
     
-    public func checkTasksAreSortedByName() {
+    public func checkTasksAreSortedByName() throws {
+        let options = XCTExpectedFailure.Options()
+        options.issueMatcher = { issue in
+            issue.type == .assertionFailure && issue.compactDescription.contains("Invalid order of tasks")
+        }
+        
         for index in 0...tasks.count-2 {
+            if tasks.element(boundBy: index+1).staticTexts.firstMatch.label > tasks.element(boundBy: index).staticTexts.firstMatch.label {
+                options.isEnabled = false
+            }
+            else {
+                options.isEnabled = true
+            }
+            
+            XCTExpectFailure("Expected failure", options: options)
             XCTAssertGreaterThan(tasks.element(boundBy: index+1).staticTexts.firstMatch.label, tasks.element(boundBy: index).staticTexts.firstMatch.label, "Invalid order of tasks")
-        }
+            
+            }
     }
     
-    func taskProgressSaved() {
-        let updatedStatus = tasks.element(boundBy: 0).images["cell_image_view"].value
-        checkTaskStatus(expectedStatus: updatedStatus, actualStatus: taskCompleted)
+    func taskProgressSaved() throws {
+        let updatedStatus = tasks.element(boundBy: 0).images["cell_image_view"].value as! String
         XCTExpectFailure("Task progress is not saved")
+        try checkTaskStatus(expectedStatus: updatedStatus, actualStatus: taskCompleted)
+        
     }
     
 }

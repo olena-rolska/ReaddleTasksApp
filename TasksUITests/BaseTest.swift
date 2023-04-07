@@ -11,11 +11,22 @@ import XCTest
 class BaseTest: XCTestCase {
     
     let app = XCUIApplication()
+    let tasksScreen = TasksScreen()
     
     override func setUpWithError() throws {
         continueAfterFailure = false
         app.launch()
     }
+    
+    override func tearDown() {
+        tasksScreen.logout(option: .logout)
+    }
+    
+    override func tearDownWithError() throws {
+        //deleteApp()
+        super.tearDown()
+    }
+    
     
     func deleteApp() {
         app.terminate()

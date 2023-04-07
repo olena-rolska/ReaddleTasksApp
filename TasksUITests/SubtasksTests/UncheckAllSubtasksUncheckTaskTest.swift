@@ -9,20 +9,10 @@
 import XCTest
 
 class UncheckAllSubtasksUncheckTaskTest: BaseTest {
-    let email = "dummy@gmail.com"
-    let password = "1"
-    
-    let taskCompleted = "Selected"
-    let taskUnchecked = "Not selected"
-    
-    override func tearDown() {
-        deleteApp()
-        super.tearDown()
-    }
     
     func testUncheckAllSubtasksUncheckTask() throws {
         let loginScreen = LoginScreen()
-        loginScreen.login(email: email, pass: password)
+        try loginScreen.login()
 
         let tasksScreen = TasksScreen()
         XCTAssert(tasksScreen.tasksPage.waitForExistence(timeout: 5), "User is not logged in")
@@ -32,7 +22,7 @@ class UncheckAllSubtasksUncheckTaskTest: BaseTest {
         
         sleepTask.tap()
         
-        tasksScreen.checkTaskStatus(expectedStatus: sleepTask.images["cell_image_view"].value, actualStatus: taskCompleted)
+        try tasksScreen.checkTaskStatus(expectedStatus: sleepTask.images["cell_image_view"].value as! String, actualStatus: tasksScreen.taskCompleted)
         
         let subtasksScreen = SubTasksScreen()
         subtasksScreen.moreInfoButton.tap()
@@ -40,13 +30,13 @@ class UncheckAllSubtasksUncheckTaskTest: BaseTest {
         
         tasksScreen.manageAllTasks(option: .complete)
         tasksScreen.manageAllTasks(option: .uncheck)
-        tasksScreen.checkAllTasksStatuses(status: taskUnchecked)
+        try tasksScreen.checkAllTasksStatuses(status: tasksScreen.taskUnchecked)
         
         subtasksScreen.backButton.tap()
         
         XCTAssert(tasksScreen.tasksPage.waitForExistence(timeout: 5), "User is on the wrong screen")
         
-        tasksScreen.checkTaskStatus(expectedStatus: sleepTask.images["cell_image_view"].value, actualStatus: taskUnchecked)
+        try tasksScreen.checkTaskStatus(expectedStatus: sleepTask.images["cell_image_view"].value as! String, actualStatus: tasksScreen.taskUnchecked)
         
     }
 }

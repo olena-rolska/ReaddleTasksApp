@@ -29,6 +29,21 @@
 		52CF773A29DC594E008C8FD2 /* LogoutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF773929DC594E008C8FD2 /* LogoutTest.swift */; };
 		52CF773C29DC6A74008C8FD2 /* LogoutNegativeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF773B29DC6A74008C8FD2 /* LogoutNegativeTest.swift */; };
 		52CF773F29DC6D1D008C8FD2 /* CompleteTaskTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF773E29DC6D1D008C8FD2 /* CompleteTaskTest.swift */; };
+		52CF774329DD6F7A008C8FD2 /* UncheckTaskTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF774229DD6F7A008C8FD2 /* UncheckTaskTest.swift */; };
+		52CF774529DD8247008C8FD2 /* CompleteAllTasksTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF774429DD8247008C8FD2 /* CompleteAllTasksTest.swift */; };
+		52CF774729DDB9E0008C8FD2 /* UncheckAllTasksTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF774629DDB9E0008C8FD2 /* UncheckAllTasksTest.swift */; };
+		52CF774929DDBECA008C8FD2 /* SortTasksByNameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF774829DDBECA008C8FD2 /* SortTasksByNameTest.swift */; };
+		52CF774C29DDED2E008C8FD2 /* SortSubtasksByNameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF774B29DDED2E008C8FD2 /* SortSubtasksByNameTest.swift */; };
+		52CF774E29DEC9DB008C8FD2 /* OpenSubtasksScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF774D29DEC9DB008C8FD2 /* OpenSubtasksScreenTest.swift */; };
+		52CF775029DECC53008C8FD2 /* CompleteAllSubtasksCompleteTaskTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF774F29DECC53008C8FD2 /* CompleteAllSubtasksCompleteTaskTest.swift */; };
+		52CF775229DEE18B008C8FD2 /* UncheckAllSubtasksUncheckTaskTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF775129DEE18B008C8FD2 /* UncheckAllSubtasksUncheckTaskTest.swift */; };
+		52CF775429DF0731008C8FD2 /* CompleteTaskCompleteSubtasksTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF775329DF0731008C8FD2 /* CompleteTaskCompleteSubtasksTest.swift */; };
+		52CF775629DF0A2F008C8FD2 /* LogoutFromSubtasksNegativeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF775529DF0A2F008C8FD2 /* LogoutFromSubtasksNegativeTest.swift */; };
+		52CF775829DF0BD4008C8FD2 /* UncheckAllSubtasksTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF775729DF0BD4008C8FD2 /* UncheckAllSubtasksTest.swift */; };
+		52CF775C29DF1221008C8FD2 /* CompleteAllSubtasksTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF775B29DF1221008C8FD2 /* CompleteAllSubtasksTest.swift */; };
+		52CF775E29DF1865008C8FD2 /* TaskProgressSavedAfterReloginTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF775D29DF1865008C8FD2 /* TaskProgressSavedAfterReloginTest.swift */; };
+		52CF776029DF2C6D008C8FD2 /* LogoutFromSubtasksTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF775F29DF2C6D008C8FD2 /* LogoutFromSubtasksTest.swift */; };
+		52CF776229DF2F50008C8FD2 /* UncheckTaskUncheckAllSubtasksTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF776129DF2F50008C8FD2 /* UncheckTaskUncheckAllSubtasksTest.swift */; };
 		532EEA3729DB35A9002D711E /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532EEA3629DB35A9002D711E /* BaseTest.swift */; };
 		532EEA3A29DB36D5002D711E /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532EEA3929DB36D5002D711E /* LoginScreen.swift */; };
 		532EEA3C29DB3B0A002D711E /* TasksScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532EEA3B29DB3B0A002D711E /* TasksScreen.swift */; };
@@ -83,6 +98,21 @@
 		52CF773929DC594E008C8FD2 /* LogoutTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutTest.swift; sourceTree = "<group>"; };
 		52CF773B29DC6A74008C8FD2 /* LogoutNegativeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutNegativeTest.swift; sourceTree = "<group>"; };
 		52CF773E29DC6D1D008C8FD2 /* CompleteTaskTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTaskTest.swift; sourceTree = "<group>"; };
+		52CF774229DD6F7A008C8FD2 /* UncheckTaskTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UncheckTaskTest.swift; sourceTree = "<group>"; };
+		52CF774429DD8247008C8FD2 /* CompleteAllTasksTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteAllTasksTest.swift; sourceTree = "<group>"; };
+		52CF774629DDB9E0008C8FD2 /* UncheckAllTasksTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UncheckAllTasksTest.swift; sourceTree = "<group>"; };
+		52CF774829DDBECA008C8FD2 /* SortTasksByNameTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortTasksByNameTest.swift; sourceTree = "<group>"; };
+		52CF774B29DDED2E008C8FD2 /* SortSubtasksByNameTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortSubtasksByNameTest.swift; sourceTree = "<group>"; };
+		52CF774D29DEC9DB008C8FD2 /* OpenSubtasksScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSubtasksScreenTest.swift; sourceTree = "<group>"; };
+		52CF774F29DECC53008C8FD2 /* CompleteAllSubtasksCompleteTaskTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteAllSubtasksCompleteTaskTest.swift; sourceTree = "<group>"; };
+		52CF775129DEE18B008C8FD2 /* UncheckAllSubtasksUncheckTaskTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UncheckAllSubtasksUncheckTaskTest.swift; sourceTree = "<group>"; };
+		52CF775329DF0731008C8FD2 /* CompleteTaskCompleteSubtasksTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTaskCompleteSubtasksTest.swift; sourceTree = "<group>"; };
+		52CF775529DF0A2F008C8FD2 /* LogoutFromSubtasksNegativeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutFromSubtasksNegativeTest.swift; sourceTree = "<group>"; };
+		52CF775729DF0BD4008C8FD2 /* UncheckAllSubtasksTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UncheckAllSubtasksTest.swift; sourceTree = "<group>"; };
+		52CF775B29DF1221008C8FD2 /* CompleteAllSubtasksTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteAllSubtasksTest.swift; sourceTree = "<group>"; };
+		52CF775D29DF1865008C8FD2 /* TaskProgressSavedAfterReloginTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProgressSavedAfterReloginTest.swift; sourceTree = "<group>"; };
+		52CF775F29DF2C6D008C8FD2 /* LogoutFromSubtasksTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutFromSubtasksTest.swift; sourceTree = "<group>"; };
+		52CF776129DF2F50008C8FD2 /* UncheckTaskUncheckAllSubtasksTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UncheckTaskUncheckAllSubtasksTest.swift; sourceTree = "<group>"; };
 		532EEA2929DB238D002D711E /* TasksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TasksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		532EEA3629DB35A9002D711E /* BaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTest.swift; sourceTree = "<group>"; };
 		532EEA3929DB36D5002D711E /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
@@ -200,6 +230,8 @@
 			children = (
 				52CF773929DC594E008C8FD2 /* LogoutTest.swift */,
 				52CF773B29DC6A74008C8FD2 /* LogoutNegativeTest.swift */,
+				52CF775529DF0A2F008C8FD2 /* LogoutFromSubtasksNegativeTest.swift */,
+				52CF775F29DF2C6D008C8FD2 /* LogoutFromSubtasksTest.swift */,
 			);
 			path = LogoutTests;
 			sourceTree = "<group>";
@@ -208,13 +240,34 @@
 			isa = PBXGroup;
 			children = (
 				52CF773E29DC6D1D008C8FD2 /* CompleteTaskTest.swift */,
+				52CF774229DD6F7A008C8FD2 /* UncheckTaskTest.swift */,
+				52CF774429DD8247008C8FD2 /* CompleteAllTasksTest.swift */,
+				52CF774629DDB9E0008C8FD2 /* UncheckAllTasksTest.swift */,
+				52CF774829DDBECA008C8FD2 /* SortTasksByNameTest.swift */,
+				52CF775D29DF1865008C8FD2 /* TaskProgressSavedAfterReloginTest.swift */,
 			);
 			path = TasksTests;
+			sourceTree = "<group>";
+		};
+		52CF774A29DDED0D008C8FD2 /* SubtasksTests */ = {
+			isa = PBXGroup;
+			children = (
+				52CF774B29DDED2E008C8FD2 /* SortSubtasksByNameTest.swift */,
+				52CF774D29DEC9DB008C8FD2 /* OpenSubtasksScreenTest.swift */,
+				52CF774F29DECC53008C8FD2 /* CompleteAllSubtasksCompleteTaskTest.swift */,
+				52CF775129DEE18B008C8FD2 /* UncheckAllSubtasksUncheckTaskTest.swift */,
+				52CF775329DF0731008C8FD2 /* CompleteTaskCompleteSubtasksTest.swift */,
+				52CF775729DF0BD4008C8FD2 /* UncheckAllSubtasksTest.swift */,
+				52CF775B29DF1221008C8FD2 /* CompleteAllSubtasksTest.swift */,
+				52CF776129DF2F50008C8FD2 /* UncheckTaskUncheckAllSubtasksTest.swift */,
+			);
+			path = SubtasksTests;
 			sourceTree = "<group>";
 		};
 		532EEA2A29DB238D002D711E /* TasksUITests */ = {
 			isa = PBXGroup;
 			children = (
+				52CF774A29DDED0D008C8FD2 /* SubtasksTests */,
 				52CF773D29DC6D0A008C8FD2 /* TasksTests */,
 				52CF773829DC5929008C8FD2 /* LogoutTests */,
 				52CF772D29DC13C5008C8FD2 /* LoginTests */,
@@ -406,15 +459,30 @@
 			files = (
 				52CF773C29DC6A74008C8FD2 /* LogoutNegativeTest.swift in Sources */,
 				532EEA3729DB35A9002D711E /* BaseTest.swift in Sources */,
+				52CF775229DEE18B008C8FD2 /* UncheckAllSubtasksUncheckTaskTest.swift in Sources */,
 				52CF773A29DC594E008C8FD2 /* LogoutTest.swift in Sources */,
+				52CF776229DF2F50008C8FD2 /* UncheckTaskUncheckAllSubtasksTest.swift in Sources */,
 				52CF773729DC52AC008C8FD2 /* BaseScreen.swift in Sources */,
+				52CF774729DDB9E0008C8FD2 /* UncheckAllTasksTest.swift in Sources */,
 				52CF773129DC2D51008C8FD2 /* LoginWithEmptyPassTest.swift in Sources */,
+				52CF775629DF0A2F008C8FD2 /* LogoutFromSubtasksNegativeTest.swift in Sources */,
 				52CF772C29DB51FE008C8FD2 /* BaseScreen.swift in Sources */,
+				52CF775E29DF1865008C8FD2 /* TaskProgressSavedAfterReloginTest.swift in Sources */,
+				52CF776029DF2C6D008C8FD2 /* LogoutFromSubtasksTest.swift in Sources */,
+				52CF775829DF0BD4008C8FD2 /* UncheckAllSubtasksTest.swift in Sources */,
+				52CF775429DF0731008C8FD2 /* CompleteTaskCompleteSubtasksTest.swift in Sources */,
+				52CF774329DD6F7A008C8FD2 /* UncheckTaskTest.swift in Sources */,
 				52CF773529DC4EDF008C8FD2 /* LoginWithInvalidEmailTest.swift in Sources */,
+				52CF774E29DEC9DB008C8FD2 /* OpenSubtasksScreenTest.swift in Sources */,
+				52CF775029DECC53008C8FD2 /* CompleteAllSubtasksCompleteTaskTest.swift in Sources */,
 				532EEA3C29DB3B0A002D711E /* TasksScreen.swift in Sources */,
 				532EEA3E29DB3C40002D711E /* SubtasksScreen.swift in Sources */,
 				52CF772F29DC13E7008C8FD2 /* BasicLoginTest.swift in Sources */,
+				52CF774929DDBECA008C8FD2 /* SortTasksByNameTest.swift in Sources */,
+				52CF774C29DDED2E008C8FD2 /* SortSubtasksByNameTest.swift in Sources */,
 				52CF773F29DC6D1D008C8FD2 /* CompleteTaskTest.swift in Sources */,
+				52CF775C29DF1221008C8FD2 /* CompleteAllSubtasksTest.swift in Sources */,
+				52CF774529DD8247008C8FD2 /* CompleteAllTasksTest.swift in Sources */,
 				532EEA3A29DB36D5002D711E /* LoginScreen.swift in Sources */,
 				52CF773329DC4D2B008C8FD2 /* LoginWithEmptyEmailTest.swift in Sources */,
 			);
