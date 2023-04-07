@@ -7,8 +7,8 @@ Thumbs.db
 *.xcbkptlist
 *.xcuserstate
 /vendor
-/Healo.xcworkspace/xcuserdata
+/Tasks.xcworkspace/xcuserdata
 /Pods/Pods.xcodeproj/xcuserdata
-/Healo.xcodeproj/xcuserdata
+/Tasks.xcodeproj/xcuserdata
 /fastlane/report.xml
 /fastlane/README.md
