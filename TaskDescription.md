@@ -39,8 +39,7 @@ Please reachout Oksana (otolstykh@readdle.com) if you have any questions.
 
 
 # LIST OF TEST CASES: 
-// Only summaries of tests: e.g. 
-- Perform login with empty password field
+// Only summaries of tests: 
 
 - Application installation
 - Login with valid email and password
