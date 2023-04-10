@@ -17,14 +17,17 @@ class LoginScreen: BaseScreen {
     let tasksPage = app.staticTexts["Tasks"]
     let errorAlert = app.alerts.buttons["Retry"]
     let loginProgressLoader = app.staticTexts["Logging in"]
+    let pasteButton = app.staticTexts["Paste"]
     
     public func login(email: String = "dummy@gmail.com", password: String = "1") throws {
         
         emailField.tap()
         emailField.typeText(email)
         
+        UIPasteboard.general.string = password
         passwordField.tap()
-        passwordField.typeText(password)
+        passwordField.doubleTap()
+        pasteButton.tap()
         
         loginButton.tap()
         
