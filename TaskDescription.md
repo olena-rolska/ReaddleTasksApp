@@ -72,8 +72,8 @@ Please reachout Oksana (otolstykh@readdle.com) if you have any questions.
 
 # LIST OF DISCOVERED ISSUES:
 // Only summaries of bug reports: e.g.
-- Login can be performed with empty password field (not a real issue)
 
+1. User cannot hide keyboard to tap the login button
 1. Unexpected error while user logging in
 2. Wrong task selection when user complete/uncomplete the task
 3. Complete All/ Cancel all button tap do not complete/cancel completion of all tasks
